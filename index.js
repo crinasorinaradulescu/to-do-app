@@ -2,15 +2,10 @@ const form = document.querySelector("form");
 const input = document.querySelector("input");
 const ul = document.querySelector("ul");
 
-// Get the existing todo items from local storage, if any
 const todoItems = JSON.parse(localStorage.getItem("todos")) || [];
 const completedItems = JSON.parse(localStorage.getItem("completed")) || [];
 
-// Render the todo items
-// renderTodos();
-// renderCompletedTodos();
-
-// Add a new todo item when the form is submitted
+// Add a new todo item
 form.addEventListener("submit", function (e) {
   e.preventDefault();
 
@@ -25,7 +20,7 @@ form.addEventListener("submit", function (e) {
   todoItems.push(todo);
   localStorage.setItem("todos", JSON.stringify(todoItems));
 
-  // renderTodos();
+
   location.reload();
 });
 
